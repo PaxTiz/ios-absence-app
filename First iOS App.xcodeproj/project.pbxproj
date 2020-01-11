@@ -28,6 +28,7 @@
 		F100AD8F23CA6CCF004A96B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F100AD9123CA6CCF004A96B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F100AD9723CA6ED8004A96B4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Home.swift; path = Views/Home.swift; sourceTree = "<group>"; };
+		F100AD9B23CA86BD004A96B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 		F100AD7423CA6CCD004A96B4 = {
 			isa = PBXGroup;
 			children = (
+				F100AD9B23CA86BD004A96B4 /* README.md */,
 				F100AD7F23CA6CCD004A96B4 /* First iOS App */,
 				F100AD7E23CA6CCD004A96B4 /* Products */,
 			);
