@@ -28,11 +28,20 @@ struct ContentView: View {
 				
 			}.navigationBarTitle("Semestre \(selection)")
 				.navigationBarItems(trailing:
-					Button(action: {
-						// TODO : Affcher une action sheet pour ajouter une matière dans le semestre courant
-					}) {
-						Image(systemName: "plus").foregroundColor(Color.blue)
-						Text("Ajouter une matière")
+					HStack {
+						Button(action: {
+							// TODO : Affcher une action sheet pour ajouter une matière dans le semestre courant
+						}) {
+							Image(systemName: "plus").foregroundColor(Color.blue)
+							Text("Nouvelle absence")
+						}
+						
+						Button(action: {
+							// TODO : Affcher une action sheet pour ajouter une matière dans le semestre courant
+						}) {
+							Image(systemName: "plus").foregroundColor(Color.blue)
+							Text("Nouvelle matière")
+						}
 					}
 			)
 		}
