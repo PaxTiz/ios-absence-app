@@ -33,14 +33,8 @@ struct ContentView: View {
 			Material(name: "ProgMobile", totalHours: 45),
 		])
 	]
-	
-	private var actionSheet: ActionSheet = ActionSheet(
-		title: Text("test"),
-		message: Text("action sheet")
-	)
-	
+
 	@State private var materialAction: Bool = false
-	@State var absenceAction: Bool = false
 	
 	var body: some View {
 		
@@ -52,26 +46,18 @@ struct ContentView: View {
 						Image(systemName: "\(sm.identifier).circle")
 						Text("Semestre " + String(sm.identifier))
 					}.tag(sm.identifier - 1)
-				}
+				}.padding(15)
 				
 			}.navigationBarTitle("Absences", displayMode: .inline)
 				.navigationBarItems(
-					leading: Button(action: {
-						// TODO : Affcher une action sheet pour ajouter une matière dans le semestre courant
+					// Bouton de droite
+					trailing: Button(action: {
 						self.materialAction = true
 					}){
 						Image(systemName: "plus").foregroundColor(Color.blue)
 						Text("Matière")
 					}.sheet(isPresented: $materialAction) {
 						MaterialModal(semester: self.selection)
-					},
-					trailing: Button(action: {
-						self.absenceAction.toggle()
-					}) {
-						Image(systemName: "plus").foregroundColor(Color.blue)
-						Text("Absence")
-					}.sheet(isPresented: $absenceAction) {
-						AbsenceModal(semester: self.selection)
 					}
 			)
 		}

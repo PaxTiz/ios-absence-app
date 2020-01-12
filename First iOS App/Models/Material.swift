@@ -11,7 +11,7 @@ import Foundation
 struct Material : Hashable {
 	var name: String
 	var totalHours: Int
-	var absences: Int = 0
+	var absences: Int = 2
 	
 	init(name: String, totalHours: Int) {
 		self.name = name
