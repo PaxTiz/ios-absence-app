@@ -9,10 +9,38 @@
 import SwiftUI
 
 struct ContentView: View {
-	@State private var selection = 1
-	private let semesters: [Int] = [
-		1, 2, 3, 4
+	
+	@State private var selection = 0
+	private let semesters: [Semester] = [
+		Semester(id: 1, materials: [
+			Material(name: "SE", totalHours: 45),
+			Material(name: "PWEB", totalHours: 60),
+			Material(name: "Anglais", totalHours: 45),
+		]),
+		Semester(id: 2, materials: [
+			Material(name: "SE2", totalHours: 45),
+			Material(name: "Orga", totalHours: 60),
+			Material(name: "Anglais", totalHours: 45),
+		]),
+		Semester(id: 3, materials: [
+			Material(name: "SE3", totalHours: 45),
+			Material(name: "PWEB", totalHours: 60),
+			Material(name: "GSI", totalHours: 45),
+		]),
+		Semester(id: 4, materials: [
+			Material(name: "RX3", totalHours: 45),
+			Material(name: "PWEB2", totalHours: 60),
+			Material(name: "ProgMobile", totalHours: 45),
+		])
 	]
+	
+	private var actionSheet: ActionSheet = ActionSheet(
+		title: Text("test"),
+		message: Text("action sheet")
+	)
+	
+	@State private var materialAction: Bool = false
+	@State var absenceAction: Bool = false
 	
 	var body: some View {
 		
@@ -21,32 +49,35 @@ struct ContentView: View {
 				
 				ForEach(semesters, id: \.self) { sm in
 					Home(semester: sm).tabItem {
-						Image(systemName: "\(sm).circle")
-						Text("Semestre \(sm)")
-					}.tag(sm - 1)
+						Image(systemName: "\(sm.identifier).circle")
+						Text("Semestre " + String(sm.identifier))
+					}.tag(sm.identifier - 1)
 				}
 				
-			}.navigationBarTitle("Semestre \(selection)")
-				.navigationBarItems(trailing:
-					HStack {
-						Button(action: {
-							// TODO : Affcher une action sheet pour ajouter une matière dans le semestre courant
-						}) {
-							Image(systemName: "plus").foregroundColor(Color.blue)
-							Text("Nouvelle absence")
-						}
-						
-						Button(action: {
-							// TODO : Affcher une action sheet pour ajouter une matière dans le semestre courant
-						}) {
-							Image(systemName: "plus").foregroundColor(Color.blue)
-							Text("Nouvelle matière")
-						}
+			}.navigationBarTitle("Absences", displayMode: .inline)
+				.navigationBarItems(
+					leading: Button(action: {
+						// TODO : Affcher une action sheet pour ajouter une matière dans le semestre courant
+						self.materialAction = true
+					}){
+						Image(systemName: "plus").foregroundColor(Color.blue)
+						Text("Matière")
+					}.sheet(isPresented: $materialAction) {
+						MaterialModal(semester: self.selection)
+					},
+					trailing: Button(action: {
+						self.absenceAction.toggle()
+					}) {
+						Image(systemName: "plus").foregroundColor(Color.blue)
+						Text("Absence")
+					}.sheet(isPresented: $absenceAction) {
+						AbsenceModal(semester: self.selection)
 					}
 			)
 		}
 		
 	}
+	
 }
 
 struct ContentView_Previews: PreviewProvider {

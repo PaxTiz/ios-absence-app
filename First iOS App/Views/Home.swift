@@ -10,20 +10,31 @@ import SwiftUI
 
 struct Home: View {
 	
-	private var current: Int = 1
+	private var current: Semester
 	
-	init(semester: Int) {
+	init(semester: Semester) {
 		current = semester
 		print("Init \(semester)")
 	}
  
     var body: some View {
-        Text("Semestre \(current)")
+		List {
+			Section {
+				ForEach(current.materials, id: \.self) { ma in
+					Text(ma.name)
+				}
+			}
+			}.listStyle(GroupedListStyle())
+	
     }
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-		Home(semester: 1)
+		Home(semester: Semester(id: 1, materials: [
+			Material(name: "SE", totalHours: 45),
+			Material(name: "PWEB", totalHours: 60),
+			Material(name: "Anglais", totalHours: 45),
+		]))
     }
 }

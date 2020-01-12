@@ -15,6 +15,10 @@
 		F100AD8D23CA6CCF004A96B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F100AD8C23CA6CCF004A96B4 /* Preview Assets.xcassets */; };
 		F100AD9023CA6CCF004A96B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F100AD8E23CA6CCF004A96B4 /* LaunchScreen.storyboard */; };
 		F100AD9823CA6ED8004A96B4 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100AD9723CA6ED8004A96B4 /* Home.swift */; };
+		F100ADA323CA9D84004A96B4 /* MaterialModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100ADA223CA9D84004A96B4 /* MaterialModal.swift */; };
+		F100ADA523CAA238004A96B4 /* AbsenceModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100ADA423CAA238004A96B4 /* AbsenceModal.swift */; };
+		F100ADA723CAA2E4004A96B4 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100ADA623CAA2E4004A96B4 /* Material.swift */; };
+		F100ADA923CAA317004A96B4 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F100ADA823CAA317004A96B4 /* Semester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		F100AD9123CA6CCF004A96B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F100AD9723CA6ED8004A96B4 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Home.swift; path = Views/Home.swift; sourceTree = "<group>"; };
 		F100AD9B23CA86BD004A96B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F100ADA223CA9D84004A96B4 /* MaterialModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MaterialModal.swift; path = Views/MaterialModal.swift; sourceTree = "<group>"; };
+		F100ADA423CAA238004A96B4 /* AbsenceModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AbsenceModal.swift; path = Views/AbsenceModal.swift; sourceTree = "<group>"; };
+		F100ADA623CAA2E4004A96B4 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Material.swift; path = Models/Material.swift; sourceTree = "<group>"; };
+		F100ADA823CAA317004A96B4 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Semester.swift; path = Models/Semester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +56,7 @@
 				F100AD9B23CA86BD004A96B4 /* README.md */,
 				F100AD7F23CA6CCD004A96B4 /* First iOS App */,
 				F100AD7E23CA6CCD004A96B4 /* Products */,
+				F100AD9F23CA8B0C004A96B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +74,10 @@
 				F100AD8023CA6CCE004A96B4 /* AppDelegate.swift */,
 				F100AD8223CA6CCE004A96B4 /* SceneDelegate.swift */,
 				F100AD8723CA6CCE004A96B4 /* ContentView.swift */,
+				F100ADA823CAA317004A96B4 /* Semester.swift */,
+				F100ADA623CAA2E4004A96B4 /* Material.swift */,
+				F100ADA223CA9D84004A96B4 /* MaterialModal.swift */,
+				F100ADA423CAA238004A96B4 /* AbsenceModal.swift */,
 				F100AD9723CA6ED8004A96B4 /* Home.swift */,
 				F100AD8923CA6CCF004A96B4 /* Assets.xcassets */,
 				F100AD8E23CA6CCF004A96B4 /* LaunchScreen.storyboard */,
@@ -83,6 +96,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F100AD9F23CA8B0C004A96B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,6 +119,8 @@
 			dependencies = (
 			);
 			name = "First iOS App";
+			packageProductDependencies = (
+			);
 			productName = "First iOS App";
 			productReference = F100AD7D23CA6CCD004A96B4 /* First iOS App.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +149,8 @@
 				Base,
 			);
 			mainGroup = F100AD7423CA6CCD004A96B4;
+			packageReferences = (
+			);
 			productRefGroup = F100AD7E23CA6CCD004A96B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,7 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F100ADA723CAA2E4004A96B4 /* Material.swift in Sources */,
+				F100ADA923CAA317004A96B4 /* Semester.swift in Sources */,
+				F100ADA323CA9D84004A96B4 /* MaterialModal.swift in Sources */,
 				F100AD8123CA6CCE004A96B4 /* AppDelegate.swift in Sources */,
+				F100ADA523CAA238004A96B4 /* AbsenceModal.swift in Sources */,
 				F100AD8623CA6CCE004A96B4 /* First_iOS_App.xcdatamodeld in Sources */,
 				F100AD9823CA6ED8004A96B4 /* Home.swift in Sources */,
 				F100AD8823CA6CCE004A96B4 /* ContentView.swift in Sources */,
