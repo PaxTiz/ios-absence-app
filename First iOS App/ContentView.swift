@@ -72,8 +72,7 @@ struct ContentView: View {
 					Text("Semestre \(sm.identifier)")
 				}.tag(sm.identifier - 1)
 			}
-			
-		}
+		}.navigationViewStyle(StackNavigationViewStyle())
 	}
 	
 }
