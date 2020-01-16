@@ -10,9 +10,9 @@ import Foundation
 
 struct Semester : Hashable {
 	var identifier: Int
-	var materials: [Material]
+	var materials: [[Material]]
 	
-	init(id: Int, materials: [Material]) {
+	init(id: Int, materials: [[Material]]) {
 		self.identifier = id
 		self.materials = materials
 	}

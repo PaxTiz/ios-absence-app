@@ -44,7 +44,9 @@ struct Home: View {
 						// Grille avec toutes les matières
 						ForEach(current.materials, id: \.self) { ma in
 							HStack(spacing: 10) {
-								Card(material: ma)
+								ForEach(ma, id: \.self) { material in
+									Card(material: material)
+								}
 							}
 						}
 						
@@ -57,12 +59,14 @@ struct Home: View {
 						// Grille avec toutes les matières
 						ForEach(current.materials, id: \.self) { ma in
 							HStack(spacing: 10) {
-								Card(material: ma)
+								ForEach(ma, id: \.self) { material in
+									Card(material: material)
+								}
 							}
 						}
 					}
 				}
-			}.padding(EdgeInsets.init(top: 0, leading: 10, bottom: 10, trailing: 10))
+			}.padding(EdgeInsets.init(top: 0, leading: 10, bottom: 0, trailing: 10))
 				.navigationBarTitle("Semestre \(current.identifier)")
 					.navigationBarItems(
 						// Bouton de droite
@@ -150,10 +154,14 @@ struct Card: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
 		Home(semester: Semester(id: 1, materials: [
-			Material(name: "SE", totalHours: 45),
-			Material(name: "PWEB", totalHours: 60),
-			Material(name: "Anglais", totalHours: 45),
-			Material(name: "SE2", totalHours: 45)
+			[
+				Material(name: "SE", totalHours: 45),
+				Material(name: "PWEB", totalHours: 60)
+			],
+			[
+				Material(name: "Anglais", totalHours: 45),
+				Material(name: "SE2", totalHours: 45)
+			]
 		]))
     }
 }
