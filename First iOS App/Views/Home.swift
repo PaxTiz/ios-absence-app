@@ -66,12 +66,12 @@ struct Home: View {
 						}
 					}
 				}
-			}.padding(EdgeInsets.init(top: 0, leading: 10, bottom: 0, trailing: 10))
+			}.padding(EdgeInsets.init(top: 0, leading: 20, bottom: 0, trailing: 20))
 				.navigationBarTitle("Semestre \(current.identifier)")
 					.navigationBarItems(
 						// Bouton de droite
 						trailing: Button(action: {
-							self.materialAction = true
+							self.materialAction.toggle()
 						}){
 							Image(systemName: "plus").foregroundColor(Color.blue)
 							Text("Matière")
