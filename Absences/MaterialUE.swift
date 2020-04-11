@@ -22,7 +22,7 @@ struct MaterialUE: View {
 		VStack {
 			// Affichage des matières informatiques
 			VStack(spacing: 10) {
-				Text("Matières informatiques")
+				Text("\(viewTitle)")
 					.font(.system(size: 32))
 					.fontWeight(.bold)
 					.frame(maxWidth: .infinity, alignment: .leading)

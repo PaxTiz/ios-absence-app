@@ -23,6 +23,8 @@ func sortByUE(materials: [Material]) -> [[Material]] {
 }
 
 struct Home: View {
+	
+	@State private var offset: CGFloat = 600
 
 	private var current: Semester
 	private var info: [[Material]]
@@ -37,20 +39,41 @@ struct Home: View {
 
     var body: some View {
 		NavigationView {
-			ScrollView {
-				Text("Semestre \(current.identifier)")
-					.font(.system(size: 38))
-					.fontWeight(.bold)
-					.frame(maxWidth: .infinity, alignment: .leading)
+			ZStack {
+				ScrollView {
+					HStack {
+						Text("Semestre \(current.identifier)")
+							.font(.system(size: 38))
+							.fontWeight(.bold)
+							.frame(maxWidth: .infinity, alignment: .leading)
+						
+						Image(systemName: "plus.circle")
+							.font(.custom("", size: 28))
+							.onTapGesture {
+								withAnimation {
+									if self.offset == 600 {
+										self.offset = 300
+									} else {
+										self.offset = 600
+									}
+								}
+						}
+					}
+					
+					MaterialUE(viewTitle: "Matières informatiques", materials: self.info)
+					Spacer()
+					MaterialUE(viewTitle: "Matières générales", materials: self.general)
+				}.padding()
+					.navigationBarTitle("")
+					.navigationBarHidden(true)
+					.edgesIgnoringSafeArea(.bottom)
 				
-				MaterialUE(viewTitle: "Semestre \(current.identifier)", materials: self.info)
-				Spacer()
-				MaterialUE(viewTitle: "Semestre \(current.identifier)", materials: self.general)
+				MaterialSheet(offsetSize: self.$offset)
+					.padding(.all, 20)
+					.background(Color.init(red: 0.92, green: 0.92, blue: 0.92))
+					.offset(y: self.offset)
+					.edgesIgnoringSafeArea(.vertical)
 			}
-			.padding()
-			.navigationBarTitle("")
-			.navigationBarHidden(true)
-			.edgesIgnoringSafeArea(.bottom)
 		}
 	}
 }
