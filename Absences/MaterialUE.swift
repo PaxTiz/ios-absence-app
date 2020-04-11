@@ -28,22 +28,7 @@ struct MaterialUE: View {
 					.frame(maxWidth: .infinity, alignment: .leading)
 				
 				// Grille avec toutes les matières
-				ForEach(self.materials, id: \.self) { array in
-					HStack(spacing: 10) {
-						ForEach(array, id: \.self) { mat in
-							Card(material: mat)
-								.padding()
-								.background(
-									RadialGradient(gradient:
-										Gradient(
-											colors: [Color.init(red: 0.46, green: 0.72, blue: 0.32), Color.init(red: 0.55, green: 0.76, blue: 0.44)]),
-												   center: .center,
-												   startRadius: 0,
-												   endRadius: 180
-								)).cornerRadius(10)
-						}
-					}
-				}
+				Grid(materials: self.materials)
 			}
 		}.padding(.top, 10)
     }

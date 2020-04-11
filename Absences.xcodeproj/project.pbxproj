@@ -18,6 +18,7 @@
 		F1C5474423CFB11700CBF765 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5474223CFB11700CBF765 /* Semester.swift */; };
 		F1C5474523CFB11700CBF765 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5474323CFB11700CBF765 /* Material.swift */; };
 		F1C5474723CFC1FC00CBF765 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5474623CFC1FC00CBF765 /* Home.swift */; };
+		F1DC04F82442021700FAE0FD /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DC04F72442021700FAE0FD /* Grid.swift */; };
 		F1E740052440C0B800516E46 /* UE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E740042440C0B800516E46 /* UE.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		F1C5474223CFB11700CBF765 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		F1C5474323CFB11700CBF765 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		F1C5474623CFC1FC00CBF765 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F1DC04F72442021700FAE0FD /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		F1E740042440C0B800516E46 /* UE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UE.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 			children = (
 				F15EBDF42441F8C0006D40A1 /* Card.swift */,
 				F15EBDF62441F979006D40A1 /* MaterialUE.swift */,
+				F1DC04F72442021700FAE0FD /* Grid.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				F1E740052440C0B800516E46 /* UE.swift in Sources */,
 				F1C5474523CFB11700CBF765 /* Material.swift in Sources */,
 				F1C5474423CFB11700CBF765 /* Semester.swift in Sources */,
+				F1DC04F82442021700FAE0FD /* Grid.swift in Sources */,
 				F1C5472B23CFAF4900CBF765 /* AppDelegate.swift in Sources */,
 				F1C5472D23CFAF4900CBF765 /* SceneDelegate.swift in Sources */,
 				F1C5474723CFC1FC00CBF765 /* Home.swift in Sources */,
