@@ -12,13 +12,15 @@ struct Material : Hashable {
 	
 	var name: String
 	var totalHours: Int
-	var absences: Int = 2
+	var maxAbsences: Int
+	var absences: Int = 0
 	var ue: UE
 	
 	init(name: String, totalHours: Int, ue: UE) {
 		self.name = name
 		self.totalHours = totalHours
 		self.ue = ue
+		self.maxAbsences = totalHours / 15 as Int
 	}
 	
 }

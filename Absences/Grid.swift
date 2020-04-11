@@ -16,14 +16,14 @@ struct Grid: View {
 		self.materials = materials
 	}
 	
-	func backgroundColor(hours: Int) -> [Color] {
-		if hours == 0 {
+	func backgroundColor(hours: Int, max: Int) -> [Color] {
+		if hours == max {
 			// RED
 			return [
 				Color.init(red: 0.93, green: 0.13, blue: 0.23),
 				Color.init(red: 0.58, green: 0.16, blue: 0.12)
 			]
-		} else if hours == 1 {
+		} else if hours == max - 1 {
 			// ORANGE
 			return [
 				Color.init(red: 0.96, green: 0.42, blue: 0.27),
@@ -47,7 +47,7 @@ struct Grid: View {
 						.background(
 							RadialGradient(gradient:
 								Gradient(
-									colors: self.backgroundColor(hours: mat.absences)),
+									colors: self.backgroundColor(hours: mat.absences, max: mat.maxAbsences)),
 										   center: .center,
 										   startRadius: 0,
 										   endRadius: 180

@@ -39,7 +39,7 @@ struct Card: View {
 				
 				Spacer()
 				
-				Text(String(material.absences))
+				Text(String(material.maxAbsences - material.absences))
 					.foregroundColor(Color.white)
 					.font(.custom("Avenir Next Condensed", size: 22))
 					.fontWeight(.medium)
